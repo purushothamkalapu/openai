@@ -1,15 +1,23 @@
 spring:
   application:
     name: openai
-  # This is for Perplexity API key configuration
+#This is for Google Genai configuration
   ai:
-    openai:
-      api-key: ${OPENAI_API_KEY}
-      base-url: https://api.perplexity.ai
-      chat:
-        options:
-          model: sonar-pro
-        completions-path: /chat/completions
+    google:
+      genai:
+        chat:
+          options:
+            model: gemini-2.5-flash
+        api-key: ${GOOGLE_API_KEY}
+  # This is for Perplexity API key configuration
+#  ai:
+#    openai:
+#      api-key: ${OPENAI_API_KEY}
+#      base-url: https://api.perplexity.ai
+#      chat:
+#        options:
+#          model: sonar-pro
+#        completions-path: /chat/completions
 # this is for OPENAI API key configuration
 #  ai:
 #    openai:
