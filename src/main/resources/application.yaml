@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: openai
+  # This is for Perplexity API key configuration
+  ai:
+    openai:
+      api-key: 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
+      base-url: https://api.perplexity.ai
+      chat:
+        options:
+          model: sonar-pro
+        completions-path: /chat/completions
+# this is for OPENAI API key configuration
+#  ai:
+#    openai:
+#      api-key: <Key Place HERE>
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
+#logging:
+#  pattern:
+#    console: %green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n
+
+
+
