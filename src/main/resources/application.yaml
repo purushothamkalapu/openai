@@ -4,7 +4,7 @@ spring:
   # This is for Perplexity API key configuration
   ai:
     openai:
-      api-key: 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
+      api-key: ${OPENAI_API_KEY}
       base-url: https://api.perplexity.ai
       chat:
         options:
