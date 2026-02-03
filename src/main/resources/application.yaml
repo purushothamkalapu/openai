@@ -1,14 +1,23 @@
 spring:
   application:
     name: openai
-#This is for Google Genai configuration
+#This is for Local olllama configuration
   ai:
-    google:
-      genai:
-        chat:
-          options:
-            model: gemini-2.5-flash
-        api-key: ${GOOGLE_API_KEY}
+    model:
+      chat: ollama
+    ollama:
+      chat:
+        options:
+          model: llama3.2:1b
+
+  #This is for Google Genai configuration
+#  ai:
+#    google:
+#      genai:
+#        chat:
+#          options:
+#            model: gemini-2.5-flash
+#        api-key: ${GOOGLE_API_KEY}
   # This is for Perplexity API key configuration
 #  ai:
 #    openai:

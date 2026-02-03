@@ -1,10 +1,6 @@
 package com.eazybyte.openai.controller;
 
-import org.springframework.ai.chat.messages.UserMessage;
-import org.springframework.ai.chat.model.ChatResponse;
-import org.springframework.ai.chat.prompt.Prompt;
-import org.springframework.ai.google.genai.GoogleGenAiChatModel;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -45,6 +41,9 @@ public class ChatController {
         Prompt prompt = new Prompt(new UserMessage(message));
         return this.chatModel.stream(prompt);
     }*/
+    /*
+    Google Gen AI LLM
+
     private final GoogleGenAiChatModel chatModel;
 
     @Autowired
@@ -61,5 +60,18 @@ public class ChatController {
     public Flux<ChatResponse> generateStream(@RequestParam(value = "message", defaultValue = "Tell me a joke") String message) {
         Prompt prompt = new Prompt(new UserMessage(message));
         return this.chatModel.stream(prompt);
+    }*/
+
+    private final ChatClient chatClient;
+
+    public ChatController(ChatClient.Builder chatClientBuilder) {
+        this.chatClient = chatClientBuilder.build();
+    }
+
+    @GetMapping("/chat/ollama")
+    public String ollamaChat(@RequestParam("message") String message) {
+        return chatClient.prompt(message)
+                .call()
+                .content();
     }
 }
