@@ -11,7 +11,7 @@
 	<groupId>com.eazybyte</groupId>
 	<artifactId>openai</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>openai</name>
+	<name>multi-model-ai</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
